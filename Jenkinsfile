@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh 'git clone https://github.com/successanil/RxJavaBasicDemo.git'
+      }
+    }
+
   }
 }
