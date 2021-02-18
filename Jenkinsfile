@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('checkout') {
       steps {
         sh 'git clone https://github.com/successanil/RxJavaBasicDemo.git'
       }
