@@ -1,19 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('bu') {
-      steps {
-        echo 'Hello'
-      }
-    }
-
     stage('checkout') {
-      steps {
-        sh 'git clone https://github.com/successanil/RxJavaBasicDemo.git'
+      parallel {
+        stage('checkout') {
+          steps {
+            sh 'git clone https://github.com/successanil/RxJavaBasicDemo.git'
+          }
+        }
+
+        stage('build') {
+          steps {
+            sh './gradlew build'
+          }
+        }
+
       }
     }
 
   }
 }
-
-// comment added 
